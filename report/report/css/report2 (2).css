@@ -1,0 +1,10 @@
+@import url(./reset.css);
+
+.wrapper {
+  margin: 100px;
+  width: 595px;
+  height: 842px;
+  display: flex;
+  border: 2px solid #333;
+  padding: 36px 35px 36px;
+}

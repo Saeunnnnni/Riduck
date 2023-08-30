@@ -1,0 +1,169 @@
+.animalsBottomWrap {
+  zoom: 0.6;
+}
+.animalInner {
+  width: 2100px;
+  margin: 0 auto;
+  position: relative;
+  bottom: -40px;
+}
+.tiger {
+  position: absolute;
+  bottom: -20px;
+  right: 360px;
+  zoom: 1.34;
+  z-index: 19;
+}
+.lion {
+  position: absolute;
+  bottom: -3px;
+  right: 200px;
+  z-index: 1;
+  zoom: 1.12;
+  z-index: 10;
+}
+.elephant {
+  position: absolute;
+  bottom: -5px;
+  right: 60px;
+  zoom: 1.25;
+  z-index: 9;
+}
+.deer {
+  position: absolute;
+  bottom: -30px;
+  right: 240px;
+  zoom: 1.2;
+  z-index: 21;
+}
+.dog {
+  position: absolute;
+  bottom: -20px;
+  right: 320px;
+  zoom: 1.15;
+  z-index: 20;
+}
+.camel {
+  transform: scaleX(-1);
+  position: absolute;
+  bottom: -2px;
+  left: 340px;
+  zoom: 1.1;
+  z-index: 22;
+}
+.boar {
+  position: absolute;
+  bottom: -20px;
+  left: 300px;
+  zoom: 1.1;
+  z-index: 23;
+}
+.turtle {
+  position: absolute;
+  bottom: -26px;
+  left: 200px;
+  zoom: 1;
+  z-index: 21;
+}
+.cow {
+  position: absolute;
+  bottom: -6px;
+  left: 100px;
+  zoom: 1.15;
+  z-index: 19;
+}
+.horse {
+  position: absolute;
+  bottom: -25px;
+  left: 540px;
+  z-index: 25;
+}
+
+.roller {
+  transform: scaleX(-1);
+  width: 213px;
+  height: 207px;
+  position: absolute;
+  bottom: 18px;
+  right: 550px;
+  z-index: 18;
+  zoom: 1.1;
+}
+.bike {
+  width: 210px;
+  height: 154px;
+  position: absolute;
+  bottom: 26px;
+  left: 530px;
+  z-index: 20;
+  zoom: 1.2;
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .animalsBottomWrap {
+    zoom: 0.5;
+  }
+
+}
+@media screen and (min-width: 720px) and (max-width: 1280px) {
+  .animalsBottomWrap {
+    zoom: 0.35;
+  }
+
+  .leftAnimalsWrap {
+  }
+
+  .rightAnimalsWrap {
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 720px) {
+  .animalsBottomWrap {
+    zoom: 0.35;
+
+  }
+.animalInner {
+}
+.tiger{
+  right: 310px;
+}
+.roller{
+  right: 510px;
+}
+
+  .elephant,
+  .dog {
+    display: none;
+  }
+ 
+  .cow,
+  .turtle {
+    display: none;
+  }
+ 
+}
+@media all and (max-width: 400px) {
+  .animalsBottomWrap {
+    zoom: 0.35;
+
+  }
+.animalInner {
+  bottom: -40px;
+  right: 0px;
+}
+.tiger{
+  right: 310px;
+}
+.roller{
+  right: 510px;
+}
+
+  .elephant,
+  .dog {
+    display: none;
+  }
+ 
+  .cow,
+  .turtle {
+    display: none;
+  }
+}

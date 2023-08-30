@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power_calibration</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="https://rest.riduck.com/report-api/curve_lib.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <div class="front-header">
+          <div class="fl">
+            <div class="logo"><img src="../iamge/common/logo.png" /></div>
+          </div>
+          <div class="fr">
+            <ul>
+              <li>
+                <p>Slowtwitch</p>
+                <p>cycling data</p>
+                <p>analysis report</p>
+              </li>
+              <li>
+                <p>2022.00.00~2022.00.00</p>
+                <p>분석 : <span id="c_writer"></span> 멘토</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="power_calibration_title" id="title">
+          <h4>✅파워 데이터 유효성 검증</h4>
+          <p></p>
+        </div>
+        <div class="power-calibration-wrap">
+          <div id="power_calibration">
+            <img src="../iamge/common/power_analysis_chart.png" />
+          </div>
+          <div class="how-to">
+            <p>
+              <b>파워정합도 분석 차트</b>를 통해 내가 현재 사용하고 있는
+              파워미터의 정확도 및 오차범위에 대해서 파악해볼 수 있습니다.
+            </p>
+            <p>
+              수백만 건의 사이클링 구간기록과 사용자 데이터를 머신러닝을 통해
+              특정한 구간에서의 파워(watts)를 추정하고 실제 파워와 비교할 수
+              있습니다. 최근 100여 건의 활동 정보에서 4.5% 1km 이상의 구간기록을
+              사용자와 자전거 정보를 시뮬레이션하여 기록 대비 평균 파워를
+              추정해낸 뒤, 실제 노력한 평균 파워와 비교합니다. 일정한 오르막
+              구간에서는 가장 큰 오차값인 풍량(CdA) 값을 최소화할 수 있으며,
+              사용자 체중과 자전거 무게 그리고 일반적인 중상급 로드 자전거 구동
+              성능과 노면 상태 구름 저항(CRR) 등을 고려하여 시뮬레이션합니다.
+              이때, 오차범위는 약 +-10~11% 이내가 되며 정상적인 파워미터라면
+              대부분 이 오차범위 안에 들어오게 됩니다.
+            </p>
+            <p>
+              -각각의 포인트가 곡면 안에 포함되면 <b>정상</b>, 외곽에 있을 때
+              <b>e(에러)</b>가 뜹니다. 현실에서는 여러 가지 변수가 많아 종종
+              에러 데이터가 발생할 수 있으나 에러율이 다수 발생하는 경우
+              파워미터의 정확도에 대해 의심해보셔야 합니다. (물론, 파워데이터가
+              문제가 아닌 스트라바의 지형정보가 이상한 경우도 있습니다.)
+            </p>
+            <p>
+              -자전거 무게나 체중 차이, 공기저항, 노면, 자전거 성능 등은
+              일반적으로 조금씩 다르다는 것은 오차범위 안에서 고려되지만, 일부
+              상황에 따라 에러를 발생시킬 수 있습니다.
+            </p>
+          </div>
+
+          <div id="power_def">
+            <img src="../iamge/common/real_power.png" />
+          </div>
+          <div class="how-to">
+            <p>
+              <b>실제 파워와 추정 파워의 차이</b>를 통해 현재 사용하고 있는
+              파워미터 데이터가 실제 현실적인 물리 공식과 통계를 통해 추정된
+              파워 수치와 어느 정도 높은지 낮은지 대략적으로 파악할 수 있습니다.
+              (같은 색상의 막대기는 동일한 업힐 구간을 나타냅니다.)
+            </p>
+            <p>
+              -추정 파워와 실제 파워는 일치하는 것은 불가능하지만, 전체적인
+              차이값의 추세와 분포를 비교하는 것은 유의미합니다.
+            </p>
+            <p>
+              -파워미터마다 조금 높거나 낮은 파워를 표시하는 것은 일반적이며
+              정합도 분석차트에서 에러율이 높지 않고, 파워 차이값에서도 일관성이
+              있다면 그대로 사용하셔도 무방합니다.
+            </p>
+          </div>
+        </div>
+        <div class="power-calibration-comment comment-wrap">
+          <div id="power_calibration_comment">
+            <h4>분석의견</h4>
+            <textarea id="power_calibration_comment_input"></textarea>
+          </div>
+        </div>
+
+        <footer>
+          <div class="company_info">
+            <p>www.riduck.com</p>
+            <p>Copyright&copy;Riduck Co.Ltd. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script>
+    function GraphPowerCalibration(
+      chart_data1,
+      chart_data2,
+      minimum,
+      error_rate
+    ) {
+      var chart = new CanvasJS.Chart("power_calibration", {
+        animationEnabled: true,
+        zoomEnabled: true,
+        theme: "dark2",
+        title: {
+          text: "파워 정합도 분석 차트 (에러비율:" + error_rate + "%)",
+        },
+        toolTip: {
+          shared: true,
+          contentFormatter: function (e) {
+            var content = " ";
+            var powerArray = e.entries[0].dataSeries.options.powerArray;
+            for (var i = 0; i < e.entries.length; i++) {
+              if (typeof e.entries[i].dataPoint.def === "number") {
+                var def_str = "";
+                if (e.entries[i].dataPoint.def >= 1) {
+                  def_str =
+                    "추정파워 대비 " + e.entries[i].dataPoint.def + "% 높음";
+                } else if (e.entries[i].dataPoint.def <= -1) {
+                  def_str =
+                    "추정파워 대비 " + e.entries[i].dataPoint.def + "% 낮음";
+                } else {
+                  def_str = "추정파워와 일치";
+                }
+
+                content += powerArray[e.entries[i].dataPoint.x].activity_name;
+                content += "<br/>";
+                content +=
+                  powerArray[e.entries[i].dataPoint.x].activity_start_date;
+                content += "<br/>";
+                content +=
+                  powerArray[e.entries[i].dataPoint.x].segment_name +
+                  "(" +
+                  powerArray[e.entries[i].dataPoint.x].segment_grade +
+                  "%)";
+                content += "<br/>";
+                content +=
+                  powerArray[e.entries[i].dataPoint.x].effort_power +
+                  "w " +
+                  powerArray[e.entries[i].dataPoint.x].virtual_power +
+                  "w";
+                content += "<br/>";
+                content += "<strong>" + def_str + "</strong>";
+                content += "<br/>";
+              }
+            }
+            return content;
+          },
+        },
+        axisX: {
+          //				title: "Segment-Efforts",
+          labelFormatter: function () {
+            return "";
+          },
+          //				valueFormatString: "####",
+          //				interval: 300
+        },
+        axisY: {
+          logarithmic: false, //change it to false
+          gridThickness: 0,
+          lineThickness: 1,
+          suffix: " W",
+          minimum: minimum,
+        },
+        legend: {
+          verticalAlign: "top",
+          fontSize: 16,
+          dockInsidePlotArea: true,
+        },
+        data: [chart_data1, chart_data2],
+        //			rangeChanged: syncHandler
+      });
+
+      $("#power_calibration").height(300);
+      chart.render();
+    }
+
+    function GraphPowerDef(chart_data, error_avg_def) {
+      var chart = new CanvasJS.Chart("power_def", {
+        animationEnabled: true,
+        zoomEnabled: true,
+        theme: "dark2",
+        title: {
+          text:
+            "실제 파워 - 추정 파워 차이값 (평균차이:" + error_avg_def + "%)",
+        },
+        toolTip: {
+          shared: true,
+          contentFormatter: function (e) {
+            var content = " ";
+            var powerArray = e.entries[0].dataSeries.options.powerArray;
+            for (var i = 0; i < e.entries.length; i++) {
+              if (typeof e.entries[i].dataPoint.def === "number") {
+                var def_str = "";
+                if (e.entries[i].dataPoint.def >= 1) {
+                  def_str =
+                    "추정파워 대비 " + e.entries[i].dataPoint.def + "% 높음";
+                } else if (e.entries[i].dataPoint.def <= -1) {
+                  def_str =
+                    "추정파워 대비 " + e.entries[i].dataPoint.def + "% 낮음";
+                } else {
+                  def_str = "추정파워와 일치";
+                }
+
+                content += powerArray[e.entries[i].dataPoint.x].activity_name;
+                content += "<br/>";
+                content +=
+                  powerArray[e.entries[i].dataPoint.x].activity_start_date;
+                content += "<br/>";
+                content +=
+                  powerArray[e.entries[i].dataPoint.x].segment_name +
+                  "(" +
+                  powerArray[e.entries[i].dataPoint.x].segment_grade +
+                  "%)";
+                content += "<br/>";
+                content +=
+                  powerArray[e.entries[i].dataPoint.x].effort_power +
+                  "w " +
+                  powerArray[e.entries[i].dataPoint.x].virtual_power +
+                  "w";
+                content += "<br/>";
+                content += "<strong>" + def_str + "</strong>";
+                content += "<br/>";
+              }
+            }
+            return content;
+          },
+        },
+        axisX: {
+          //				title: "Segment-Efforts",
+          labelFormatter: function () {
+            return "";
+          },
+          //				valueFormatString: "####",
+          //				interval: 300
+        },
+        axisY: {
+          logarithmic: false, //change it to false
+          gridThickness: 0,
+          lineThickness: 1,
+          suffix: " %",
+        },
+        legend: {
+          verticalAlign: "top",
+          fontSize: 16,
+          dockInsidePlotArea: true,
+        },
+        data: chart_data,
+      });
+
+      $("#power_def").height(300);
+      chart.render();
+    }
+  </script>
+</html>

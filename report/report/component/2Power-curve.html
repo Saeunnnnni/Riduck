@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power_curve</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="https://rest.riduck.com/report-api/curve_lib.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <div class="front-header">
+          <div class="fl">
+            <div class="logo"><img src="../iamge/common/logo.png" /></div>
+          </div>
+          <div class="fr">
+            <ul>
+              <li>
+                <p>Slowtwitch</p>
+                <p>cycling data</p>
+                <p>analysis report</p>
+              </li>
+              <li>
+                <p>2022.00.00~2022.00.00</p>
+                <p>분석 : <span id="c_writer"></span> 멘토</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="power_curve_title" id="title">
+          <h4>📉파워 듀레이션 커브 및 피크파워 분석</h4>
+          <p></p>
+        </div>
+        <div class="power-curve-wrap">
+          <div id="power_curve">
+            <img src="../iamge/common/power_duration.png" alt="" />
+          </div>
+          <div id="peak_power_limit">
+            <div class="table1">
+              <ul>
+                <li class="col">1초</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">5초</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">15초</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">30초</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">1분</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">2분</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">5분</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">10분</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">20분</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">40분</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+              <ul>
+                <li class="col">1시간</li>
+                <li>000 w</li>
+                <li>22/07/16</li>
+                <li>유효기간 00일 남음</li>
+              </ul>
+            </div>
+            <div class="table2">
+              <ul>
+                <li class="col">4분:000w</li>
+                <li>테스트:000w</li>
+                <li>5분:000w</li>
+                <li>6분:000w</li>
+              </ul>
+              <ul>
+                <li class="col">7분:000w</li>
+                <li>8분:000w</li>
+                <li>9분:000w</li>
+                <li>10분:000w</li>
+              </ul>
+              <ul>
+                <li class="col">12분:000w</li>
+                <li>15분:000w</li>
+                <li>20분:000w</li>
+                <li>25분:000w</li>
+              </ul>
+              <ul>
+                <li class="col">30분:000w</li>
+                <li>40분:000w</li>
+                <li>1시간:000w</li>
+                <li></li>
+              </ul>
+              <!--  <span>*FTP 기준 파워는 Ramp 테스트입니다.</span> -->
+            </div>
+          </div>
+
+          <div class="how-to">
+            <p>
+              <b>파워 듀레이션 커브와 피크파워</b>에 대한 분석은 파워 데이터
+              관리에서 가장 유용한 기능 중 하나입니다.
+            </p>
+            <p>
+              -기대파워는 전 세계 60만 명의 통계를 통해 나와 특정 피크파워 대비
+              유사한 FTP(w/kg) 퍼포먼스를 가진 사람들의 이상적인 파워커브입니다.
+            </p>
+            <p>
+              -최대 파워는 내가 실제로 파워를 기록한 시간대별 파워이며
+              필드/인도어에 차이가 있는 경우 구분하여 표기하고 있습니다.
+            </p>
+            <p>
+              -주요 시간대 피크파워는 본인의 역량과 성향을 정의하는 중요한
+              기준이 되기에 주요 시간대의 피크파워를 주기적으로 갱신하시길
+              권장합니다.
+            </p>
+            <p>
+              -피크파워는 12주(84일)를 기준으로 기록되며, 통계적으로 가장 우수한
+              피크파워의 기록은 FTP의 기준이 됩니다.
+            </p>
+            <p>
+              -일반적으로 FTP w/kg이 4점대 미만의 레크레이셔널 라이더에게
+              20~1시간 파워가 FTP 기준으로 설정된 경우, all-out 또는 FTP
+              테스트하지 않은 상태로 봅니다. 유산소 기량이 낮으면 그만큼
+              인내력과 회복력이 부족하여 지속력이나 페이스 조절에 어려움이 많아
+              최선의 노력을 다하기 어렵고 그만큼 피크파워의 신뢰도가 낮습니다.
+              그래서, 레크레이셔널 라이더들에게는 4분~10분 피크 파워 테스트를
+              권장합니다.
+            </p>
+
+            <p>
+              -FTP w/kg 4점대 이상의 우수한 퍼포먼스를 가진 라이더들은 10~20분
+              장시간 피크파워를 주기적으로 수행하길 권장합니다. 20분 피크파워
+              테스트를 통한 추정 FTP가 신뢰도가 높습니다.
+            </p>
+            <p>
+              -5,10,20분 외에도 4,7,8,12,15,25분 등 4분 이상의 대부분의
+              피크파워가 FTP 기준파워로 적용될 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="power-curve-comment comment-wrap">
+          <h4>분석의견</h4>
+          <div id="power_curve_comment">
+            <textarea id="power_curve_comment_input"></textarea>
+          </div>
+        </div>
+
+        <footer>
+          <div class="company_info">
+            <p>www.riduck.com</p>
+            <p>Copyright&copy;Riduck Co.Ltd. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      var pdc_scatter_chart = [];
+      var pdc_curve_chart = [];
+
+      var pdc_list = dashboard_json.pdc_list;
+      var pdc_best_power = dashboard_json.pdc_list.best_data.power;
+      var pdc_stereo_power = dashboard_json.pdc_list.best_data.stereo_power;
+      var pdc_outdoor_power = dashboard_json.pdc_list.best_data.outdoor_power;
+
+      var pdc_power_all = dashboard_json.pdc_list.best_data.power_all;
+      var pdc_stereo_all = dashboard_json.pdc_list.best_data.stereo_all;
+
+      var pdc_best_points = [];
+      var pdc_stereo_points = [];
+      var pdc_outdoor_points = [];
+
+      var duration_arr = Array(
+        1,
+        5,
+        15,
+        30,
+        60,
+        120,
+        300,
+        600,
+        1200,
+        2400,
+        3600
+      );
+      var label_arr = Array(
+        "01초",
+        "05초",
+        "15초",
+        "30초",
+        "01분",
+        "02분",
+        "05분",
+        "10분",
+        "20분",
+        "40분",
+        "1시간"
+      );
+
+      var label_major_arr = Array(
+        "1초",
+        "5초",
+        "15초",
+        "30초",
+        "1분",
+        "2분",
+        "5분",
+        "10분",
+        "20분",
+        "40분",
+        "1시간"
+      );
+      var label_all_arr = {
+        240: "4분",
+        300: "5분",
+        360: "6분",
+        420: "7분",
+        480: "8분",
+        540: "9분",
+        600: "10분",
+        720: "12분",
+        900: "15분",
+        1200: "20분",
+        1500: "25분",
+        1800: "30분",
+        2400: "40분",
+        3600: "1시간",
+      };
+      var label_test_arr = {
+        250: "Ramp 테스트",
+        470: "오리지날 MAP 테스트",
+        1350: "Hunter Allen FTP 테스트",
+      };
+      /*
+$watts_250_arr = null;
+$watts_470_arr = null;				
+$watts_1350_arr = null;				
+*/
+
+      //유산소 영역 기대 파워 비교
+      var timestamp = new Date().getTime();
+
+      var pdc_target_activities =
+        dashboard_json.pdc_list.best_data.peak_activities;
+
+      var effective_html = "<ul class='peakpower-major-ul'>";
+      var ftp_peak_html = "<ul class='peakpower-minor-ul'>";
+      var best_index_html = "";
+      var strip_line = null;
+
+      $.each(pdc_target_activities, function (index, peak_activity_id) {
+        var target_activity_obj = activity_list.find(
+          (activity) => activity.activity_id == peak_activity_id
+        );
+
+        if (best_index == duration_arr[index]) {
+          best_index_html =
+            "FTP 기준 파워는 " + label_major_arr[index] + "입니다.";
+          strip_line = best_index;
+        }
+
+        var remain_date =
+          85 -
+          Math.round(
+            (timestamp / 1000 - target_activity_obj.timestamp) / (3600 * 24)
+          );
+
+        effective_html +=
+          "<li>" +
+          label_major_arr[index] +
+          " : " +
+          pdc_best_power[index] +
+          " W, " +
+          target_activity_obj.start_date.substr(0, 8) +
+          ", 유효기간 " +
+          remain_date +
+          "일 남음</li>";
+      });
+
+      effective_html += "</ul>";
+      //logarithmic:true,
+
+      $.each(pdc_list, function (index, item) {
+        var pdc_scatter_points = [];
+        var activity_id = index;
+
+        $.each(item.power, function (x, y) {
+          pdc_scatter_points.push({
+            x: duration_arr[x],
+            y: y,
+            label: label_arr[x],
+            activity_id: activity_id,
+          });
+        });
+
+        //console.log(decimalToHexString(Number(activity_id)));
+
+        pdc_scatter_chart.push({
+          name: "pdc scatter chart",
+          type: "scatter",
+          markerSize: 10,
+          fillOpacity: "0.2",
+          dataPoints: pdc_scatter_points,
+        });
+      });
+
+      $.each(pdc_best_power, function (x, y) {
+        pdc_best_points.push({ x: duration_arr[x], y: y }); // indexLabel: label_arr[x] + ", {y}w"
+      });
+
+      $.each(pdc_outdoor_power, function (x, y) {
+        pdc_outdoor_points.push({ x: duration_arr[x], y: y }); //, indexLabel: label_arr[x] + ", {y}w"
+      });
+
+      //기대파워에 라벨링
+      $.each(pdc_stereo_power, function (x, y) {
+        var index_label =
+          "-" +
+          label_arr[x] +
+          "파워- 기대:" +
+          pdc_stereo_power[x] +
+          " w " +
+          " 최대:" +
+          pdc_best_power[x] +
+          " w " +
+          " 필드:" +
+          pdc_outdoor_power[x] +
+          " w ";
+
+        if (pdc_best_power[x] == pdc_outdoor_power[x]) {
+          index_label =
+            "-" +
+            label_arr[x] +
+            "파워- 기대:" +
+            pdc_stereo_power[x] +
+            " w " +
+            " 최대:" +
+            pdc_best_power[x] +
+            " w ";
+        }
+
+        pdc_stereo_points.push({
+          x: duration_arr[x],
+          y: y,
+          indexLabel: index_label,
+        });
+      });
+
+      //ftp_peak_html
+
+      $.each(pdc_power_all, function (index, power) {
+        //console.log(best_index + " " + index);
+
+        if (best_index == index) {
+          best_index_html =
+            "FTP 기준 파워는 " + label_all_arr[String(index)] + "입니다.";
+          if (index == 250 || index == 470 || index == 1350)
+            best_index_html =
+              "FTP 기준 파워는 " + label_test_arr[String(index)] + "입니다.";
+        }
+
+        //vo2max
+        if (index >= 240 && index <= 3600) {
+          if (index == 250 || index == 470 || index == 1350) {
+            ftp_peak_html += "<li>테스트 : " + power + " W" + "</li>";
+          } else {
+            ftp_peak_html +=
+              "<li>" +
+              label_all_arr[String(index)] +
+              " : " +
+              power +
+              " W" +
+              "</li>";
+            strip_line = best_index;
+          }
+        }
+      });
+
+      ftp_peak_html +=
+        "<li style='clear:both'></li><div class='best-index'>" +
+        best_index_html +
+        "</div></ul>";
+
+      pdc_scatter_chart.push({
+        name: "pdc best chart",
+        type: "splineArea",
+        lineColor: "#f06292",
+        indexLabelFontColor: "#f06292",
+        color: "#cccccc",
+        lineThickness: 10,
+        markerColor: "#f06292",
+        fillOpacity: "0.2",
+        markerSize: 10,
+        dataPoints: pdc_best_points,
+      });
+
+      pdc_scatter_chart.push({
+        name: "pdc stereo chart",
+        type: "spline",
+        lineColor: "#76b5e8", //#ffd357
+        indexLabelFontColor: "#66666", //#ffd357
+        indexLabelMaxWidth: 82,
+        indexLabelFontSize: 12, //#ffd357
+        lineThickness: 4,
+        markerSize: 0,
+        dataPoints: pdc_stereo_points,
+      });
+
+      pdc_scatter_chart.push({
+        name: "pdc outdoor chart",
+        type: "spline",
+        indexLabelPlacement: "inside",
+        lineColor: "#ffd357",
+        indexLabelFontColor: "#ffd357",
+        indexLabelBackgroundColor: "#CCCCCC",
+        lineThickness: 4,
+        fillOpacity: "0.6",
+        markerSize: 0,
+        dataPoints: pdc_outdoor_points,
+      });
+
+      var label_html =
+        effective_html + ftp_peak_html + "<div class='cb'></div>";
+
+      $("#power_curve").height(480);
+      $("#power_curve").after(label_html);
+
+      //갱신시간과 남은시간
+      //pdc_target_activities
+
+      /*
+			$.each(pdc_best_power, function(x, y){				
+				pdc_curve_points.push({x:duration_arr[x], y:y, indexLabel: label_arr[x] + ", {y}w"});
+			});
+
+			pdc_scatter_chart.push({
+				name: "pdc line chart",
+				type: "line",
+				lineColor: "#f06292",
+				lineThickness: 5,
+				markerColor: null,
+				fillOpacity: "0.4", 
+				markerSize: 5,
+				dataPoints: pdc_curve_points
+			});
+*/
+
+      GraphPowerCurve(pdc_scatter_chart, strip_line);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* quiz__wrap */
+.quiz__wrap {
+  /* display: flex;
+  align-items: flex-start;
+  justify-content: center; */
+  margin-top: 50px;
+  margin-bottom: 150px;
+  flex-wrap: wrap;
+}
+
+.quiz {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  /* border: 8px ridge #cacaca; */
+  margin: 10px;
+}
+
+.quiz__type {
+  background-color: #cacaca;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  /* border: 3px ridge #cacaca; */
+  color: #3b3b3b;
+  font-family: "DungGeunMo";
+  padding: 4px;
+}
+
+.quiz__question {
+  /* border-top: 6px ridge #cacaca;
+  border-bottom: 6px ridge #cacaca; */
+  padding: 20px;
+  font-family: "MabinogiClassic";
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.quiz__question .number {
+  color: #f7aa2b;
+}
+
+.quiz__question .ask {
+  display: inline;
+}
+
+.quiz__answer {
+  /*  border-top: 6px ridge #cacaca; */
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.quiz__selects {
+  margin: 5px 0;
+}
+.quiz__selects label {
+  display: flex;
+}
+.quiz__selects label input {
+  position: absolute;
+  left: -9999px;
+}
+.quiz__selects label span {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: "MabinogiClassic";
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.quiz__selects label span::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  box-shadow: inset 0px 0px 0px 4px #fad69d;
+  flex-shrink: 0;
+  transition: all 0.75s;
+}
+.quiz__selects label input:checked + span {
+  background-color: #fad69d98;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.quiz__selects label input:checked + span::before {
+  box-shadow: inset 0px 0px 0px 10px #f8b74e;
+}
+
+.quiz__confirm .check {
+  font-size: 22px;
+  border: 6px ridge #cacaca;
+  padding: 13px 60px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "MabinogiClassic";
+  line-height: 1.4;
+  cursor: pointer;
+  margin: 40px 0 0 0;
+  transition: background 0.3s;
+}
+
+.quiz__confirm .check:hover {
+  background-color: #ffb53ed8;
+}

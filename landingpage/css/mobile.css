@@ -1,0 +1,1175 @@
+@media all and (max-width: 400px) {
+  .main_bottom {
+    width: 80%;
+    margin: 0 30px;
+    bottom: 0px;
+  }
+  .main_section {
+    height: 100%;
+    padding: 30px 0 130px;
+    overflow: hidden;
+  }
+
+  .main_section_title {
+    font-size: 22px;
+    line-height: 30px;
+    padding: 10px 10px;
+  }
+
+  .burgur {
+    left: 15px;
+    top: 25px;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #4db6ac;
+  }
+  .burgur .top-line {
+    width: 20px;
+    height: 2px;
+    background-color: #4db6ac;
+    bottom: -5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+  }
+  .burgur .bot-line {
+    width: 20px;
+    height: 2px;
+    background-color: #4db6ac;
+    top: -5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+  }
+
+  .tablet_img img {
+    display: none;
+  }
+  .phone_img img {
+    margin: 0;
+    height: 270px;
+    width: 150px;
+  }
+  #login_Btn {
+    width: 90px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .section1,
+  .section2,
+  .section3 {
+    padding: 40px;
+  }
+  .section_title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .sub_title {
+    padding-top: 20px;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 12px 0px 30px;
+  }
+  .content1_img img,
+  .content2_img img,
+  .content3_img img {
+    height: 300px;
+  }
+
+  .content_img,
+  .img_box {
+    width: 120px;
+    display: none;
+  }
+  .content_img2 img {
+    margin: 0 20px;
+  }
+  .mobile_contents {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  .main_banner {
+    margin-bottom: 50px;
+  }
+  .swiper {
+    max-width: 200px;
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+  .swiper-slide {
+    margin-bottom: 45px;
+  }
+  .swiper-slide img {
+    width: 90%;
+    height: 300px;
+    text-align: center;
+  }
+
+  .pc_strava_desc img {
+    display: none;
+  }
+  .phone_strava_desc img {
+    height: 300px;
+    display: inline;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #4db6ac !important;
+  }
+
+  .left_cloud1 {
+    zoom: 0.3;
+    top: 400px;
+    left: -30px;
+  }
+  .left_cloud2 {
+    zoom: 0.35;
+    top: 80px;
+    left: -30px;
+  }
+  .left_cloud3 {
+    display: none;
+  }
+
+  .right_sun {
+    zoom: 0.4;
+    top: 0px;
+    right: 30px;
+  }
+  .right_cloud1 {
+    zoom: 0.3;
+    top: 220px;
+    right: 80px;
+  }
+  .right_cloud2 {
+    zoom: 0.3;
+    top: 250px;
+    right: 70px;
+  }
+  .right_cloud3 {
+    zoom: 0.3;
+    top: 400px;
+    right: -20px;
+  }
+
+  .right_cloud4 {
+    zoom: 0.4;
+    top: 450px;
+    right: -10px;
+  }
+
+  /* 구름 */
+
+  .left_land1 {
+    zoom: 0.23;
+    bottom: 5px;
+    left: -10;
+  }
+  .left_land2 {
+    zoom: 0.2;
+    bottom: 5px;
+    left: 300px;
+  }
+  .left_tree1 {
+    zoom: 0.23;
+    bottom: 175px;
+    left: 80px;
+  }
+  .left_tree2 {
+    zoom: 0.23;
+    bottom: 155px;
+    left: 20px;
+  }
+
+  /* 왼쪽 land */
+  .right_land1 {
+    zoom: 0.2;
+    right: -10px;
+    bottom: -10px;
+  }
+  .right_land2 {
+    zoom: 0.23;
+    bottom: 5px;
+    right: 450px;
+  }
+  .right_tree1 {
+    zoom: 0.22;
+    bottom: 55px;
+    right: 70px;
+  }
+  .right_tree2 {
+    zoom: 0.22;
+    bottom: 35px;
+    right: 20px;
+  }
+
+  #tiger {
+    bottom: -10px;
+    right: 10px;
+    zoom: 0.43;
+  }
+  #lion {
+    bottom: 0px;
+    right: -80px;
+    zoom: 0.38;
+  }
+
+  #deer {
+    bottom: -10px;
+    right: 170px;
+    zoom: 0.33;
+  }
+  #elephant,
+  #dog {
+    display: none;
+  }
+  #camel {
+    bottom: 0px;
+    left: 190px;
+    zoom: 0.35;
+  }
+  #boar {
+    bottom: 0px;
+    left: 110px;
+    zoom: 0.35;
+  }
+  #horse {
+    bottom: -20px;
+    left: -60px;
+    zoom: 0.3;
+  }
+  #cow,
+  #turtle {
+    display: none;
+  }
+
+  /* 동물 */
+  .bike {
+    bottom: 0px;
+    right: 60px;
+    zoom: 0.35;
+  }
+
+  .roller {
+    bottom: 10px;
+    left: 40px;
+    zoom: 0.28;
+  }
+  footer {
+    padding: 10px 10px 30px;
+  }
+
+  .accodian {
+    display: block;
+    padding: 30px;
+  }
+  input[id*="answer"] {
+    display: none;
+  }
+
+  input[id*="answer"] + label {
+    font-size: 22px;
+    display: block;
+    padding-top: 10px;
+    color: #fff;
+    font-weight: 400;
+
+    /*    max-width: 720px; */
+    cursor: pointer;
+    position: relative;
+    /*    width: 300px; */
+    height: 60px;
+    box-sizing: border-box;
+    border-top: 1px solid #ffffff;
+  }
+  input[id*="answer"] + label em {
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url(../image/common/plus.png) 0 0 no-repeat;
+    background-size: 21px;
+    color: #ffffff;
+  }
+  input[id*="answer"] + label + div {
+    margin-top: 10px;
+    padding: 0;
+    max-height: 0;
+    width: 300px;
+    transition: all 0.35s;
+    overflow: hidden;
+    font-size: 18px;
+  }
+  input[id*="answer"] + label + div p {
+    display: block;
+  }
+  input[id*="answer"]:checked + label + div {
+    display: inline-block;
+    max-height: 800px;
+    max-width: 1000px;
+  }
+  input[id*="answer"]:checked + label em {
+    background: url(../image/common/minus.png) 0 0 no-repeat;
+    background-size: 21px;
+  }
+  .bottom_section2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_icon img {
+    zoom: 0.85;
+  }
+
+  .company_info p {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .company_info a {
+    text-decoration: underline;
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 720px) {
+  .main_bottom {
+    width: 80%;
+    margin: 0 40px 0;
+    bottom: 0px;
+  }
+  .main_section {
+    height: 100%;
+    padding: 30px 0 160px;
+    overflow: hidden;
+  }
+
+  .main_section_title {
+    font-size: 29px;
+    line-height: 40px;
+    padding: 15px 20px;
+  }
+
+  .burgur {
+    left: 15px;
+    top: 25px;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #4db6ac;
+  }
+  .burgur .top-line {
+    width: 20px;
+    height: 2px;
+    background-color: #4db6ac;
+    bottom: -5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+  }
+  .burgur .bot-line {
+    width: 20px;
+    height: 2px;
+    background-color: #4db6ac;
+    top: -5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s;
+  }
+
+  .tablet_img img {
+    display: none;
+  }
+  .phone_img img {
+    margin: 0;
+    height: 270px;
+    width: 150px;
+  }
+  #login_Btn {
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .section1,
+  .section2,
+  .section3 {
+    padding: 40px;
+  }
+  .section_title {
+    font-size: 29px;
+    line-height: 40px;
+  }
+
+  .sub_title {
+    padding-top: 20px;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 12px 0px 30px;
+  }
+  .content1_img img,
+  .content2_img img,
+  .content3_img img {
+    height: 300px;
+  }
+
+  .content_img,
+  .img_box {
+    width: 120px;
+    display: none;
+  }
+  .content_img2 img {
+    margin: 0 20px;
+  }
+  .mobile_contents {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  .main_banner {
+    margin-bottom: 50px;
+  }
+  .swiper {
+    max-width: 200px;
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+  .swiper-slide {
+    margin-bottom: 45px;
+  }
+  .swiper-slide img {
+    width: 95%;
+    height: 300px;
+    text-align: center;
+  }
+
+  .pc_strava_desc img {
+    display: none;
+  }
+  .phone_strava_desc img {
+    height: 300px;
+    display: inline;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #4db6ac !important;
+  }
+
+  .left_cloud1 {
+    zoom: 0.3;
+    top: 500px;
+    left: -30px;
+  }
+  .left_cloud2 {
+    zoom: 0.4;
+    top: 160px;
+    left: -30px;
+  }
+  .left_cloud3 {
+    display: none;
+  }
+
+  .right_sun {
+    zoom: 0.45;
+    top: 10px;
+    right: 30px;
+  }
+  .right_cloud1 {
+    zoom: 0.3;
+    top: 220px;
+    right: 280px;
+  }
+  .right_cloud2 {
+    zoom: 0.3;
+    top: 250px;
+    right: 270px;
+  }
+  .right_cloud3 {
+    zoom: 0.3;
+    top: 360px;
+    right: 80px;
+  }
+
+  .right_cloud4 {
+    zoom: 0.5;
+    top: 380px;
+    right: 10px;
+  }
+
+  /* 구름 */
+
+  .left_land1 {
+    zoom: 0.4;
+    left: -10;
+  }
+  .left_land2 {
+    zoom: 0.6;
+    left: 0px;
+  }
+  .left_tree1 {
+    zoom: 0.4;
+    bottom: 250px;
+    left: 80px;
+  }
+  .left_tree2 {
+    zoom: 0.4;
+    bottom: 200px;
+    left: 20px;
+  }
+
+  /* 왼쪽 land */
+  .right_land1 {
+    zoom: 0.5;
+    right: -100px;
+  }
+  .right_land2 {
+    zoom: 0.5;
+    right: 130px;
+  }
+  .right_tree1 {
+    zoom: 0.4;
+    bottom: 120px;
+    right: 70px;
+  }
+  .right_tree2 {
+    zoom: 0.4;
+    bottom: 100px;
+    right: 20px;
+  }
+
+  #tiger {
+    bottom: -10px;
+    right: 0px;
+    zoom: 0.62;
+  }
+  #lion {
+    bottom: 0px;
+    right: -100px;
+    zoom: 0.55;
+  }
+
+  #deer {
+    bottom: -20px;
+    right: 150px;
+    zoom: 0.5;
+  }
+  #elephant,
+  #dog {
+    display: none;
+  }
+  #camel {
+    bottom: 0px;
+    left: 180px;
+    zoom: 0.5;
+  }
+  #boar {
+    bottom: -10px;
+    left: 100px;
+    zoom: 0.5;
+  }
+  #horse {
+    bottom: -20px;
+    left: -80px;
+    zoom: 0.43;
+  }
+  #cow,
+  #turtle {
+    display: none;
+  }
+
+  /* 동물 */
+  .bike {
+    bottom: 5px;
+    right: 50px;
+    zoom: 0.52;
+  }
+
+  .roller {
+    bottom: 0px;
+    left: 20px;
+    zoom: 0.43;
+  }
+  footer {
+    padding: 10px 10px 30px;
+  }
+
+  .accodian {
+    display: block;
+    padding: 30px;
+  }
+  input[id*="answer"] {
+    display: none;
+  }
+
+  input[id*="answer"] + label {
+    font-size: 22px;
+    display: block;
+    padding-top: 10px;
+    color: #fff;
+    font-weight: 400;
+
+    /*    max-width: 720px; */
+    cursor: pointer;
+    position: relative;
+    /*    width: 300px; */
+    height: 60px;
+    box-sizing: border-box;
+    border-top: 1px solid #ffffff;
+  }
+  input[id*="answer"] + label em {
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url(../image/common/plus.png) 0 0 no-repeat;
+    background-size: 21px;
+    color: #ffffff;
+  }
+  input[id*="answer"] + label + div {
+    margin-top: 10px;
+    padding: 0;
+    max-height: 0;
+    width: 300px;
+    transition: all 0.35s;
+    overflow: hidden;
+    font-size: 18px;
+  }
+  input[id*="answer"] + label + div p {
+    display: block;
+  }
+  input[id*="answer"]:checked + label + div {
+    display: inline-block;
+    max-height: 800px;
+    max-width: 1000px;
+  }
+  input[id*="answer"]:checked + label em {
+    background: url(../image/common/minus.png) 0 0 no-repeat;
+    background-size: 21px;
+  }
+  .bottom_section2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_icon img {
+    zoom: 0.85;
+  }
+
+  .company_info p {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .company_info a {
+    text-decoration: underline;
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1280px) {
+  .main_bottom {
+    width: 80%;
+    margin: 0 80px 0;
+    bottom: 10px;
+  }
+  .main_section_title {
+    font-size: 33px;
+    padding: 50px 0;
+  }
+  .main_section {
+    padding: 30px 0 50px;
+  }
+  .tablet_img img {
+    width: 100%;
+    zoom: 0.65;
+  }
+  .phone_img img {
+    zoom: 0.59;
+  }
+
+  #login_Btn {
+    width: 130px;
+    height: 60px;
+    font-size: 28px;
+    margin: 50px 0 100px;
+  }
+  .section1 {
+    padding: 80px;
+  }
+  .section2,
+  .section3 {
+    padding: 100px 0 130px;
+  }
+  .section_title {
+    font-size: 33px;
+  }
+  .sub_title {
+    font-size: 23px;
+    padding: 32px 0 100px;
+  }
+  .content_img {
+    zoom: 0.69;
+  }
+  .contents {
+    font-size: 18px;
+  }
+  .img_box {
+    zoom: 0.64;
+  }
+
+  .content_img2 img {
+    margin: 0 20px;
+  }
+  .content_img1 img,
+  .content_img2 img,
+  .content_img3 img,
+  .img1 img,
+  .img2 img,
+  .img3 img {
+    height: 450px;
+  }
+  .content_img2 img {
+    margin: 0 50px;
+  }
+  .img2 img {
+    margin: 0 50px 0 10px;
+  }
+  .pc_strava_desc img {
+    zoom: 0.45;
+  }
+
+  .left_cloud1 {
+    zoom: 0.65;
+    top: 40px;
+    left: -200px;
+  }
+  .left_cloud2 {
+    zoom: 0.65;
+    top: 200px;
+    left: 250px;
+  }
+  .left_cloud3 {
+    zoom: 0.65;
+    top: 350px;
+    left: 50px;
+  }
+
+  .right_sun {
+    zoom: 0.6;
+    top: 20px;
+    right: 30px;
+  }
+  .right_cloud1 {
+    zoom: 0.8;
+    top: 100px;
+    right: 90px;
+  }
+  .right_cloud2 {
+    zoom: 0.7;
+    top: 150px;
+    right: 100px;
+  }
+  .right_cloud3 {
+    zoom: 0.7;
+    top: 250px;
+    right: -40px;
+  }
+
+  .right_cloud4 {
+    zoom: 0.6;
+    top: 400px;
+    right: 0;
+  }
+
+  /* 구름 */
+
+  .left_land1 {
+    zoom: 0.6;
+  }
+  .left_land2 {
+    zoom: 0.55;
+    left: 30px;
+  }
+  .left_tree1 {
+    zoom: 0.55;
+    bottom: 220px;
+    left: 90px;
+  }
+  .left_tree2 {
+    zoom: 0.55;
+    left: 30px;
+    bottom: 190px;
+  }
+  .right_tree1 {
+    zoom: 0.5;
+    right: 70px;
+    bottom: 110px;
+  }
+  .right_tree2 {
+    zoom: 0.5;
+    right: 10px;
+    bottom: 120px;
+  }
+
+  /* 왼쪽 land */
+  .right_land1 {
+    zoom: 0.95;
+  }
+  .right_land2 {
+    zoom: 0.8;
+    right: 250px;
+  }
+
+  #tiger {
+    bottom: -10px;
+    right: 100px;
+    zoom: 0.63;
+  }
+  #lion {
+    bottom: 0px;
+    right: 10px;
+    zoom: 0.55;
+  }
+  #elephant {
+    bottom: 0px;
+    right: -100px;
+    zoom: 0.6;
+  }
+  #deer {
+    bottom: -10px;
+    right: 270px;
+    zoom: 0.53;
+  }
+  #dog {
+    bottom: 0px;
+    right: 370px;
+    zoom: 0.53;
+  }
+  #camel {
+    bottom: 0px;
+    left: 340px;
+    zoom: 0.49;
+  }
+  #boar {
+    bottom: -10px;
+    left: 250px;
+    zoom: 0.5;
+  }
+  #turtle {
+    bottom: -30px;
+    left: 140px;
+    zoom: 0.53;
+  }
+  #cow {
+    bottom: 0px;
+    left: 80px;
+    zoom: 0.53;
+  }
+  #horse {
+    bottom: -10px;
+    left: -130px;
+    z-index: 20;
+    zoom: 0.45;
+  }
+  /* 동물 */
+  .bike {
+    bottom: 5px;
+    zoom: 0.57;
+    right: 140px;
+  }
+
+  .roller {
+    bottom: 5px;
+    zoom: 0.47;
+    left: -30px;
+  }
+
+  footer {
+    padding: 10px 150px;
+  }
+
+  .accodian {
+    display: block;
+    padding: 40px 0;
+  }
+  input[id*="answer"] {
+    display: none;
+  }
+
+  input[id*="answer"] + label {
+    font-size: 30px;
+    display: block;
+    padding-top: 10px;
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    max-width: 1200px;
+    height: 60px;
+    box-sizing: border-box;
+    border-top: 1px solid #ffffff;
+  }
+  input[id*="answer"] + label em {
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url(../image/common/plus.png) 0 0 no-repeat;
+    background-size: 25px;
+    color: #ffffff;
+  }
+  input[id*="answer"] + label + div {
+    margin-top: 10px;
+    padding: 0;
+    max-height: 0;
+    width: 400px;
+    transition: all 0.35s;
+    overflow: hidden;
+    font-size: 20px;
+  }
+  input[id*="answer"] + label + div p {
+    display: block;
+    padding-bottom: 10px;
+  }
+  input[id*="answer"]:checked + label + div {
+    display: inline-block;
+    max-height: 800px;
+    max-width: 1200px;
+  }
+  input[id*="answer"]:checked + label em {
+    background: url(../image/common/minus.png) 0 0 no-repeat;
+    background-size: 25px;
+  }
+  .bottom_section2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_icon img {
+    zoom: 1;
+  }
+
+  .company_info p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .company_info a {
+    text-decoration: underline;
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+  .main_bottom {
+    width: 70%;
+    margin: 0 200px 0;
+    bottom: 0;
+  }
+  .main_section_title {
+    font-size: 55px;
+  }
+  .main_section {
+    padding: 30px 0 80px;
+  }
+  .tablet_img img {
+    width: 100%;
+    zoom: 0.9;
+  }
+  .phone_img img {
+    zoom: 0.81;
+  }
+
+  #login_Btn {
+    width: 160px;
+    height: 70px;
+    font-size: 33px;
+    margin: 80px 0;
+  }
+  .section1,
+  .section2,
+  .section3 {
+    padding: 150px;
+  }
+
+  .section_title {
+    font-size: 55px;
+  }
+  .sub_title {
+    font-size: 35px;
+    padding: 32px 0 100px;
+  }
+  .img_box {
+    padding-bottom: 100px;
+  }
+  .content_img1 img,
+  .content_img2 img,
+  .content_img3 img,
+  .img1 img,
+  .img2 img,
+  .img3 img {
+    height: 500px;
+    box-shadow: 0 10px 14px -10px #999999;
+  }
+  .content_img2 img {
+    margin: 0 100px;
+  }
+  .contents {
+    font-size: 18px;
+  }
+  .img2 img {
+    margin: 0 70px 0 10px;
+  }
+  .pc_strava_desc img {
+    zoom: 0.58;
+  }
+
+  .left_cloud1 {
+    zoom: 1.1;
+    top: 20px;
+    left: -230px;
+  }
+  .left_cloud2 {
+    zoom: 1;
+    top: 200px;
+    left: 360px;
+  }
+  .left_cloud3 {
+    zoom: 1.2;
+    top: 300px;
+    left: -50px;
+  }
+
+  .right_sun {
+    zoom: 0.9;
+    top: 30px;
+    right: 30px;
+  }
+  .right_cloud1 {
+    zoom: 1.3;
+    top: 100px;
+    right: 90px;
+  }
+  .right_cloud2 {
+    zoom: 1.4;
+    top: 110px;
+    right: 80px;
+  }
+  .right_cloud3 {
+    zoom: 1.1;
+    top: 240px;
+    right: -50px;
+  }
+
+  .right_cloud4 {
+    zoom: 1;
+    top: 400px;
+    right: -20px;
+  }
+
+  /* 구름 */
+
+  .left_land1 {
+    zoom: 1.05;
+    bottom: 0px;
+  }
+  .left_land2 {
+    zoom: 1.5;
+    left: 0px;
+  }
+  .left_tree1 {
+    zoom: 0.9;
+    bottom: 230px;
+    left: 80px;
+  }
+  .left_tree2 {
+    zoom: 0.9;
+    bottom: 200px;
+    left: 30px;
+  }
+  .right_tree1 {
+    zoom: 0.85;
+    bottom: 90px;
+    right: 80px;
+  }
+  .right_tree2 {
+    zoom: 0.85;
+    bottom: 70px;
+    right: 20px;
+  }
+
+  /* 왼쪽 land */
+  .right_land1 {
+    zoom: 1.5;
+    right: -90px;
+  }
+  .right_land2 {
+    zoom: 1.8;
+    right: 180px;
+  }
+
+  #tiger {
+    bottom: -10px;
+    right: 100px;
+    zoom: 0.9;
+  }
+  #lion {
+    bottom: 0px;
+    right: 10px;
+    zoom: 0.8;
+  }
+  #elephant {
+    bottom: 0px;
+    right: -100px;
+    zoom: 0.85;
+  }
+  #deer {
+    bottom: -10px;
+    right: 290px;
+    zoom: 0.75;
+  }
+  #dog {
+    bottom: -10px;
+    right: 380px;
+    zoom: 0.75;
+  }
+  #camel {
+    bottom: 0px;
+    left: 340px;
+    zoom: 0.75;
+  }
+  #boar {
+    bottom: -10px;
+    left: 260px;
+    zoom: 0.75;
+  }
+  #turtle {
+    bottom: -30px;
+    left: 170px;
+    zoom: 0.75;
+  }
+  #cow {
+    bottom: -10px;
+    left: 110px;
+    zoom: 0.75;
+  }
+  #horse {
+    bottom: -20px;
+    left: -100px;
+    zoom: 0.65;
+  }
+  /* 동물 */
+  .bike {
+    bottom: 5px;
+    right: 150px;
+    zoom: 0.83;
+  }
+
+  .roller {
+    bottom: 0px;
+    left: 0px;
+    zoom: 0.7;
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weeks-tss</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <div class="front-header">
+          <div class="fl">
+            <div class="logo"><img src="../iamge/common/logo.png" /></div>
+          </div>
+          <div class="fr">
+            <ul>
+              <li>
+                <p>Slowtwitch</p>
+                <p>cycling data</p>
+                <p>analysis report</p>
+              </li>
+              <li>
+                <p>2022.00.00~2022.00.00</p>
+                <p>분석 : <span id="c_writer"></span> 멘토</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="weeks-tss-title" id="title">
+          <h4>🏋주간훈련량 분석 및 훈련량 분석</h4>
+          <p></p>
+        </div>
+
+        <div class="weeks-tss-wrap">
+          <div id="weeks_tss" style="min-height: 464px">
+            <img src="../iamge/common/weekly_tss_chart.png" alt="" />
+          </div>
+
+          <div class="how-to">
+            <p>
+              라이덕은 사용자들이 간단하게 자신의 훈련상태를 이해하도록 하기
+              위해 개인별 <b>적정 주간 훈련량</b>을 계산하여 제공합니다. 이를
+              통해 사용자 스스로의 운동량을 계획하고 과도한 운동을 제한하는데
+              도움이 되는 지표로 활용될 수 있습니다.
+            </p>
+            <p>
+              -몸 상태와 피드백을 체크하는 것과 동시에 주간 단위로 훈련량
+              가이드를 보조적인 지표로 활용하시는 데 활용하시면 좋습니다.
+            </p>
+            <p>
+              -주간 훈련량은 TRaining IMPulse 모델에 대한 이해를 기반으로
+              트레이닝픽스의 코치들이 제시하는 아마추어 레이스 등급 TSS,
+              라이덕의 실제 사용자 훈련데이터의 메타분석을 통해 만들어졌습니다.
+            </p>
+            <p>
+              -사용자들의 주간 훈련량은 Vo2max, 파워커브, 체중, FTP, tte 등을
+              기반으로 개인화된 추정치를 제공하고 있습니다.
+            </p>
+            <p>
+              -훈련량과 피로도 수치를 맹신하지 마십시오. 단일한 수치 자체를
+              신뢰하시기보다는 전체적인 데이터 변화량을 보며 훈련량의 흐름에
+              중점을 두어 분석하시기 바랍니다. 이러한 차트는 직업, 연령, 지병,
+              생활 습관 등 고려하지 못하는 변수들이 많아 완전히 현실적인 수치를
+              반영하는 것은 불가능하다고 이해하셔야 합니다.
+            </p>
+            <p>
+              -운동 피로도가 높은 상태인데도 프레시컨디션이나 훈련량 부족인 경우
+              파워미터나 스마트 트레이너가 고장 나서 지나치게 높은 FTP가 추정된
+              경우가 많습니다.
+            </p>
+            <p>
+              -오버트레이닝 주의 메시지가 장기간 지속되어도 몸이 피로함을 느끼지
+              않을 때는 피크파워 테스트를 안하셨거나 FTP가 지나치게 낮게 추정된
+              경우가 많습니다. 반드시 3개월에 한 번 이상은 피크파워 테스트
+              (all-out effort)를 수행해주십시오.
+            </p>
+          </div>
+        </div>
+        <div class="weeks-tss-comment comment-wrap">
+          <h4>분석의견</h4>
+          <div id="weeks_tss_comment">
+            <textarea id="weeks_tss_comment_input"></textarea>
+          </div>
+        </div>
+        <footer>
+          <div class="company_info">
+            <p>www.riduck.com</p>
+            <p>Copyright&copy;Riduck Co.Ltd. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

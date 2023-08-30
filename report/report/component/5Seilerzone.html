@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seilerzone</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <div class="front-header">
+          <div class="fl">
+            <div class="logo"><img src="../iamge/common/logo.png" /></div>
+          </div>
+          <div class="fr">
+            <ul>
+              <li>
+                <p>Slowtwitch</p>
+                <p>cycling data</p>
+                <p>analysis report</p>
+              </li>
+              <li>
+                <p>2022.00.00~2022.00.00</p>
+                <p>분석 : <span id="c_writer"></span> 멘토</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="seiler_zone_title" id="title">
+          <h4>🚥Seiler's 3 Zone - 양극화 훈련</h4>
+          <p></p>
+        </div>
+
+        <div class="seilerzone-wrap">
+          <div id="seiler_zone" style="min-height: 465px">
+            <img src="../iamge/common/seiler's zone.png" alt="" />
+
+            <div class="how-to">
+              <p>
+                Seiler 박사의 3존은 양극화 트레이닝을 하는 데 있어서 가장
+                참고할만한 자료입니다.
+              </p>
+              <p>
+                가운데 운동강도에 따른 체내 젖산의 증가를 의미합니다. 일반적으로
+                LT1은 약 2mmol, LT2는 약 4mmol로 알려져 있습니다. 젖산실험에
+                대해서는 개인 차이와 실험 결과 및 분석에도 차이가 있습니다.
+              </p>
+              <p>
+                -사일러 박사는 운동강도에 관해 이야기할 때, 심박수와 인지강도에
+                대해 주로 언급합니다. 따라서 본 3존 차트는 심박수로 가이드를
+                활용할 때보다 활용도가 높습니다.
+              </p>
+              <p>
+                -FTP와 최대심박 비율은 개인차에 따라 조금 다를 수는 있습니다.
+                파워는 즉각 반응하지만, 심박수의 경우 파워와 달리 지연성을
+                갖기에 동일한 세로축 하단의 파워로 3~6분 정도 지속할 때 도달하는
+                심박수로 비교하시면 비슷합니다.
+              </p>
+
+              <p>
+                -저강도 타겟 훈련 강도는 LT1 경계보다는 좀 더 아래에 위치하며
+                최대 심박의 65~70%입니다. (2시간 기준)
+              </p>
+              <p>
+                -고강도 타겟 훈련 강도는 LT2 경계 바로 위에 위치하며 89~93%
+                정도입니다. (8분 인터벌 기준)
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="seiler-zone-comment comment-wrap">
+          <h4>분석의견</h4>
+          <div id="seiler_zone_comment">
+            <textarea id="seiler_zone_comment_input"></textarea>
+          </div>
+        </div>
+
+        <footer>
+          <div class="company_info">
+            <p>www.riduck.com</p>
+            <p>Copyright&copy;Riduck Co.Ltd. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      var lt_ftp_chart = [];
+      var lt_ftp_points = [];
+
+      var lt_hr_chart = [];
+      var lt_hr_points = [];
+
+      var maximum = 16;
+
+      //ftp
+      for (var i = 50; i <= 120; i += 5) {
+        var lt = 0.5;
+
+        if (i <= 80) {
+          lt = i / 40;
+        } else if (i <= 100) {
+          lt = Math.pow((i - 80) * 0.08, 1.4) + 2.0;
+        } else if (i <= 120) {
+          lt = Math.pow((i - 100) * 0.27, 1.4) + 4.0;
+        }
+
+        lt_ftp_points.push({
+          x: i,
+          y: lt,
+          label: Math.round(Math.round(wftp * i) / 100) + "W",
+        });
+
+        maximum = lt + 1;
+      }
+
+      //hr 저강도 중강도 고강도 scatter 띄우기
+      for (var i = 55; i <= 100; i++) {
+        if (i == 66) {
+          lt_hr_points.push({ x: i, y: 11, indexLabel: "저강도" });
+        } else if (i == 82) {
+          lt_hr_points.push({ x: i, y: 11, indexLabel: "중강도" });
+        } else if (i == 94) {
+          lt_hr_points.push({ x: i, y: 11, indexLabel: "고강도" });
+        } else {
+          lt_hr_points.push({
+            x: i,
+            y: 100,
+            label: Math.round((max_hr * i) / 100),
+          });
+        }
+      }
+
+      lt_ftp_chart.push({
+        axisXType: "primary",
+        name: "lt-ftp chart",
+        type: "spline",
+        lineColor: "#76b5e8",
+        indexLabelFontColor: "#76b5e8",
+        lineThickness: 3,
+        markerSize: 3,
+        markerColor: "#76b5e8",
+        fillOpacity: "1.0",
+        dataPoints: lt_ftp_points,
+      });
+
+      lt_hr_chart.push({
+        axisXType: "secondary",
+        name: "lt-hr chart",
+        type: "scatter",
+        indexLabelAlign: "center",
+        indexLabelFontSize: 32,
+        indexLabelFontColor: "#333333",
+        markerSize: 0,
+        fillOpacity: "0.0",
+        toolTipContent: null,
+        dataPoints: lt_hr_points,
+      });
+
+      //		  dps.push({ x: stripLine.value, y:7, indexLabel: stripLine.label})
+      //			lt_hr_points.push({x: Math.round(max_hr*i/(33*0.5)), y:8, indexLabel: "Z1-Low"});
+      //		  seiler_chart.options.data.push({type: "scatter", markerSize: 0, toolTipContent: null, highlightEnabled: false, dataPoints: dps})
+
+      SeilerChart(lt_ftp_chart[0], lt_hr_chart[0], maximum);
+    </script>
+  </body>
+</html>
